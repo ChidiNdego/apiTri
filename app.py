@@ -4,14 +4,14 @@ import csv_util as csv_util
 
 app = Flask(__name__)
 
-@app.route('/recurrentTxns', methods=['GET'])
+@app.route('/recurrentTxns/transactionsByForacid', methods=['GET'])
 def RecurrentTxn():
     data = request.args.get('foracid')
     output = csv_util.getResponse(data)
     # print(output)
     return jsonify(output)
 
-@app.route('/cashbacks', methods=['GET'])
+@app.route('/cashbacks/cashbacksByCif', methods=['GET'])
 def Cashbacks():
     data = request.args.get('cif_id')
     output = csv_util.getCBResponse(data)
