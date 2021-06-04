@@ -19,8 +19,8 @@ def getResponse(foracid):
 def getCBResponse(cifId):
     print("cifId: {}".format(cifId))
 
-    df = pd.read_csv('./api_db.csv', usecols=[0,1,7,8,3],
-                 names=['cif_id', 'foracid', 'txnDateTime', 'txnParticulars', 'amount'],
+    df = pd.read_csv('./api_db.csv', usecols=[0,1,3,7,8],
+                 names=['cif_id', 'foracid', 'amount', 'txnDateTime', 'txnParticulars'],
                  skiprows=1,
     converters={'cif_id': str, 'foracid':str,'txnDateTime':str})
     
